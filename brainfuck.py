@@ -1,48 +1,22 @@
 import sys
-inp = ''.join([l for l in sys.stdin])
-if ' ' in inp:
-    i,s=inp.split(' ',1)
-else:
-    i=inp
-    s=''
-sp=0
-pc=0
-dp=0
-m=[0]*30000
-out = ''
-
-while pc<len(i):
-    c=i[pc]
-    if c=='>':
-        dp += 1
-    if c=='<':
-        dp -= 1
-    if c=='+':
-        m[dp]+=1
-    if c=='-':
-        m[dp]-=1
-    if c=='.':
-        out+=chr(m[dp])
-    if c==',':
-        m[dp]=ord(s[sp]) if sp<len(s) else -1
-        sp+=1
-    if c=='[':
-        if m[dp] == 0:
-            scopes = 1
-            while scopes:
-                pc += 1
-                if i[pc] == '[':
-                    scopes += 1
-                if i[pc] == ']':
-                    scopes -= 1
-    elif c==']':
-        scopes = 1
-        pc-=1
-        while scopes:
-            if i[pc] == ']':
-                scopes += 1
-            if i[pc] == '[':
-                scopes -= 1
-            pc -= 1
-    pc += 1
-print out,
+_=''.join([l for l in sys.stdin])
+if' 'in _:I,S=_.split(' ',1)
+else:I,S=_,''
+s=i=m=0
+M=[0]*30000
+O=''
+while i<len(I):
+ c=I[i];m+=c=='>';m-=c=='<';M[m]+=c=='+';M[m]-=c=='-'
+ if'.'==c:O+=chr(M[m])
+ if','==c:
+  M[m]=ord(S[s])if s<len(S)else-1
+  s+=1
+ n,d=0,0
+ if c=='['and M[m]==0:n,d=1,1
+ if c==']':n,d=1,-1
+ while n:
+  i+=d;f=I[i]
+  if'['==f:n+=d
+  if']'==f:n-=d
+ i+=c!=']'
+print O,

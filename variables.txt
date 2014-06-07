@@ -1,0 +1,11 @@
+_: raw input
+I: instructions 
+i: brainfuck program pointer
+c: current instruction
+S: brainfuck stdin input
+s: brainfuck stdin input pointer
+M: brainfuck memory
+m: brainfuck memory pointer
+O: brainfuck program stdout output
+n: scopes counter
+f: current insruction during jumps
