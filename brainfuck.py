@@ -7,7 +7,7 @@ while I[i:]:
  c=ord(I[i]);m+=c==62;m-=c==60;M[m]+=c<44;M[m]-=c==45
  if 46==c:O+=chr(M[m])
  if(44==c)*S:M[m]=ord(S[0]);S=S[1:]
- if(c==91)*(M[m]==0):n,d=1,1
+ n=d=(c==91)*(M[m]==0)
  if c>92:n,d=1,-1
  while n:
   i+=d
